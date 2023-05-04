@@ -17,6 +17,7 @@ mongoose
   })
 
   .then(() => {
+    // ITERATION 1
     // return Recipe.create({
     // tittle: "Asian Glazed Chicken Thighs",
     // level: "Amateur Chef",
@@ -36,7 +37,7 @@ mongoose
     // duration: 40,
     // creator: "Chef LePapu"
     // })
-
+    // ITERATION 2
     return Recipe.insertMany(data);
   })
   .then(() => {
