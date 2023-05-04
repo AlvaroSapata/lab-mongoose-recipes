@@ -36,6 +36,7 @@ mongoose
     // duration: 40,
     // creator: "Chef LePapu"
     // })
+
     return Recipe.insertMany(data);
   })
   .then(() => {
@@ -44,10 +45,16 @@ mongoose
       { duration: 100 }
     );
   })
-
+  .then(() => {
+    return Recipe.findOneAndDelete({ title: "Carrot Cake" });
+  })
   .then((response) => {
     console.log(response);
+    return mongoose.connection
+  .close()
+  .then(() => console.log("Desconexión exitosa de MongoDB"))
   })
   .catch((error) => {
     console.error("Error connecting to the database", error);
   });
+
