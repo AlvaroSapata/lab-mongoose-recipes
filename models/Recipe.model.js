@@ -6,7 +6,7 @@ const hoy = new Date(tiempoTranscurrido);
 
 const recipeSchema = new Schema({
   // TODO: write the schema
-  tittle: {
+  title: {
     type: String,
     required:true,
     unique:true,
