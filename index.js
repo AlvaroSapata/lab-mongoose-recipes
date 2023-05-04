@@ -17,6 +17,7 @@ mongoose
   })
 
   .then(() => {
+    //* Iteration 1:
     // return Recipe.create({
     // tittle: "Asian Glazed Chicken Thighs",
     // level: "Amateur Chef",
@@ -36,24 +37,27 @@ mongoose
     // duration: 40,
     // creator: "Chef LePapu"
     // })
+    //* Iteration 3:
     return Recipe.insertMany(data);
   })
   .then(() => {
+    //* Iteration 4:
     return Recipe.findOneAndUpdate(
       { title: "Rigatoni alla Genovese" },
       { duration: 100 }
     );
   })
   .then(() => {
+    //* Iteration 5:
     return Recipe.findOneAndDelete({ title: "Carrot Cake" });
   })
   .then((response) => {
     console.log(response);
+    //* Iteration 6:
     return mongoose.connection
-  .close()
-  .then(() => console.log("Desconexión exitosa de MongoDB"))
+      .close()
+      .then(() => console.log("Desconexión exitosa de MongoDB"));
   })
   .catch((error) => {
     console.error("Error connecting to the database", error);
   });
-
